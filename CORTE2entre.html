@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    
+    
+
+
+</head>
+<body style="margin: 0px; overflow:hidden;">
+    <a-scene embedded arjs>
+
+        
+        <a-marker type='pattern' url='Assets/patts/pattern-textsol.patt'>
+            <a-entity>
+                <a-sphere src="Assets\textpla\textsol.jpg" position="0 0 0" translate="90">     
+                </a-sphere>
+            </a-entity> 
+        </a-marker>
+
+        <a-marker type='pattern' url='Assets/patts/pattern-textplu.patt'>
+            <a-entity rotation= "0 0 0" 
+                      scale="0.7 0.7 0.7" 
+                      animation="property: rotation; to:0 360 0; loop: true; dur:5000">
+                <a-sphere src="Assets\textpla\textmercu.png" position="0.5 0 0" translate="90">
+                </a-sphere>
+            </a-entity>
+        </a-marker>
+
+        <a-marker type='pattern' url='Assets/patts/pattern-textvenus.patt'>
+            <a-entity rotation= "0 0 0" 
+                      scale="0.7 0.7 0.7" 
+                      animation="property: rotation; to:0 360 0; loop: true; dur:5000">
+                
+                <a-sphere src="Assets\textpla\textvenus.jpg" position="1 0 0" translate="90">  
+                </a-sphere>
+                
+            </a-entity>
+        </a-marker> 
+
+        <a-marker type='pattern' url='Assets/patts/pattern-texttier.patt'>
+            <a-entity rotation= "0 0 0" scale="0.8 0.8 0.8" animation="property: rotation; to:0 360 0; loop: true; dur:5000">
+                <a-sphere src="Assets\textpla\texttier.png" position="2 0 0" translate="90"> 
+
+                    <a-entity rotation= "0 0 0" scale="0.5 0.5 0.5" animation="property: rotation; to:0 -360 0; loop: true; dur:5000">
+                        <a-sphere src="Assets\textpla\textvenus.jpg" position="3 1 0" >
+                        </a-sphere>
+                    </a-entity>
+
+                    <a-entity rotation= "0 0 0" scale="0.5 0.5 0.5" animation="property: rotation; to:0 360 0; loop: true; dur:5000">
+                        <a-sphere src="Assets\textpla\textvenus.jpg" position="3 1 0" >
+                        </a-sphere>
+                    </a-entity>
+
+                </a-sphere>
+            </a-entity>
+        </a-marker>
+     
+
+        
+</a-entity>
+
+    </a-scene>
+
+</body>
+</html>

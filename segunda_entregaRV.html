@@ -1,0 +1,104 @@
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component^4.0.0/dist/aframe-event-set-component.min.js"></script>
+<script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html"></script>
+<script src="https://github.com/jeromeetienne/AR.js.git"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs='sourceType: webcam;'>
+    <a-assets>
+      <!--SOL-->
+      <img id="albedoSol" src="assets/texturas/Sol/sol.jpg">
+      <img id="AOSol" src="assets/texturas/Sol/uepnbikfw_2K_AO.jpg">
+      <img id="normalSol" src="assets/texturas/Sol/uepnbikfw_2K_Normal.jpg">
+      <img id="displacementSol" src="assets/texturas/Sol/uepnbikfw_2K_Displacement.jpg">
+      <img id="roughnessSol" src="assets/texturas/Sol/uepnbikfw_2K_Roughness.jpg">
+
+      <!--PLANETA 1-->
+      <img id="albedoPlaneta1" src="assets/texturas/planeta1/rmtljup_2K_Albedo.jpg">
+      <img id="AOPlaneta1" src="assets/texturas/planeta1/rmtljup_2K_AO.jpg">
+      <img id="normalPlaneta1" src="assets/texturas/planeta1/rmtljup_2K_Normal.jpg">
+      <img id="displacementPlaneta1" src="assets/texturas/planeta1/rmtljup_2K_Displacement.jpg">
+      <img id="roughnessPlaneta1" src="assets/texturas/planeta1/rmtljup_2K_Roughness.jpg">
+
+      <!--PLANETA 2-->
+      <img id="albedoPlaneta2" src="assets/texturas/planeta2/ti4hadnr_2K_Albedo.jpg">
+      <img id="AOPlaneta2" src="assets/texturas/planeta2/ti4hadnr_2K_AO.jpg">
+      <img id="normalPlaneta2" src="assets/texturas/planeta2/ti4hadnr_2K_Normal.jpg">
+      <img id="displacementPlaneta2" src="assets/texturas/planeta2/ti4hadnr_2K_Displacement.jpg">
+      <img id="roughnessPlaneta2" src="assets/texturas/planeta2/ti4hadnr_2K_Roughness.jpg">
+
+      <!--LUNA 1-->
+      <img id="albedoLuna1" src="assets/texturas/luna1/uffmfj3s_2K_Albedo.jpg">
+      <img id="AOLuna1" src="assets/texturas/luna1/uffmfj3s_2K_AO.jpg">
+      <img id="normalLuna1" src="assets/texturas/luna1/uffmfj3s_2K_Normal.jpg">
+      <img id="displacementLuna1" src="assets/texturas/luna1/uffmfj3s_2K_Displacement.jpg">
+      <img id="roughnessLuna1" src="assets/texturas/luna1/uffmfj3s_2K_Roughness.jpg">
+
+      <!--LUNA 2-->
+      <img id="albedoLuna2" src="assets/texturas/luna2/shmodava_2K_Albedo.jpg">
+      <img id="AOLuna2" src="assets/texturas/luna2/shmodava_2K_AO.jpg">
+      <img id="normalLuna2" src="assets/texturas/luna2/shmodava_2K_Normal.jpg">
+      <img id="displacementLuna2" src="assets/texturas/luna2/shmodava_2K_Displacement.jpg">
+      <img id="roughnessLuna2" src="assets/texturas/luna2/shmodava_2K_Roughness.jpg">
+
+      <!--PLANETA 3-->
+      <img id="albedoPlaneta3" src="assets/texturas/planeta3/uepnbikfw_2K_Albedo.jpg">
+      <img id="AOPlaneta3" src="assets/texturas/planeta3/uepnbikfw_2K_AO.jpg">
+      <img id="normalPlaneta3" src="assets/texturas/planeta3/uepnbikfw_2K_Normal.jpg">
+      <img id="displacementPlaneta3" src="assets/texturas/planeta3/uepnbikfw_2K_Displacement.jpg">
+      <img id="roughnessPlaneta3" src="assets/texturas/planeta3/uepnbikfw_2K_Roughness.jpg">
+   </a-assets>
+
+    <!--MARKER SOL-->
+     <a-marker type='pattern' url='assets/marcadores/pattern-sol.patt' animation = "property: rotation; to: 0 360 0; loop: true; dur: 30000">   
+      <a-sphere position="0 0 0" scale = "0.7 0.7 0.7" src="#albedoSol"
+        material = "normalMap: #normalSol;"
+      ></a-sphere>
+        <!--MARKER PLANETA 1-->
+        <a-marker type='pattern' url='assets/marcadores/pattern-planeta1.patt' animation = "property: rotation; to: 0 360 0; loop: true; dur: 10000"> 
+          <a-sphere position="0 0 0" scale="0.2 0.2 0.2" src="#albedoPlaneta1"
+            material = "normalMap: #normalPlaneta1;"
+          ></a-sphere>
+        </a-marker> 
+
+        <!--MARKER PLANETA 2-->
+        <a-marker type='pattern' url='assets/marcadores/pattern-planeta2.patt' animation = "property: rotation; to: 0 360 0; loop: true; dur: 5000">
+          <a-sphere position="0 0 0" scale = "0.4 0.4 0.4" src="#albedoPlaneta2"
+              material = "normalMap: #normalPlaneta2;"
+          >
+
+            <!--LUNA 1-->
+            <a-sphere position="0 0 1.5" scale = "0.2 0.2 0.2" src="#albedoLuna1"
+              material = "normalMap: #normalLuna1;"
+              animation = "property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            </a-sphere>   
+          </a-sphere>
+        <!--SIMULACION PLANETA 2 INVISIBLE PARA GIRAR LA LUNA 2 AL CONTRARIO-->
+        <a-entity position="0 0 0" scale = "0.4 0.4 0.4" animation = "property: rotation; to: 0 -360 0; loop: true; dur: 5000">
+          <!--LUNA 2-->
+            <a-sphere position="0 0 3.5" scale = "0.2 0.2 0.2" src="#albedoLuna2"
+               material = "normalMap: #normalLuna2;"
+              animation = "property: rotation; to: 0 -360 0; loop: true; dur: 10000">
+            </a-sphere>    
+          </a-entity>        
+        </a-marker>
+
+        <!--MARKER PLANETA 3-->
+        <a-marker type='pattern' url='assets/marcadores/pattern-planeta3.patt' animation = "property: rotation; to: 0 360 0; loop: true; dur: 10000">
+          <a-sphere position="0 0 0" scale = "0.3 0.3 0.3" src="#albedoPlaneta3"
+            material = "normalMap: #normalPlaneta3;"
+          >
+          </a-sphere>
+        </a-marker>
+    </a-marker> 
+
+    <a-entity camera>
+    </a-entity>
+  </a-scene>
+</body>
